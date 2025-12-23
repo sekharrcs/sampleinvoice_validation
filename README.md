@@ -1,4 +1,5 @@
 flowchart TD
+
     A[Client / Caller] -->|HTTP POST /orchestrators/process_invoice| B[Durable Functions App<br/>invoice-processor-durable/function_app.py]
     B -->|Start orchestration| C[invoice_processing_orchestrator<br/>function_app.py]
     C -->|call_activity: process_invoice_activity| D[Activity<br/>activities/invoice_activities.py]
